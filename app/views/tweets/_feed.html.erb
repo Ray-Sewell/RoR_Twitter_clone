@@ -1,6 +1,12 @@
 <% @tweets.each do |tweet| %>
-    <%= tweet.body %>
-    <%= link_to 'Show', tweet %>
-    <%= link_to 'Edit', edit_tweet_path(tweet) %>
-    <%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="tweet">
+        <%= link_to "@" + User.find(tweet.user_id).username, tweet, class:"tweet_user" %>
+        <p class="tweet_body"><%= tweet.body %></p>
+        <% if User.find(tweet.user_id) == current_user %>
+            <div class="tweet_nav">
+                <%= link_to 'edit', edit_tweet_path(tweet), class:"tweet_nav_button" %>
+                <%= link_to 'destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' }, class:"tweet_nav_button" %>
+            </div>
+        <% end %>
+    </div>
 <% end %>

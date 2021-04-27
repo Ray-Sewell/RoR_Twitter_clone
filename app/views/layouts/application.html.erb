@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TwitterClone</title>
+    <title>Twitter Clone</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'reset', media: 'all' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet"> 
   </head>
 
   <body>
-    <%= yield %>
+    <div class="nav">
+      <%= link_to "Twitter Clone", tweets_path, id:"logo" %>
+      <div class="nav_links">
+        <% if user_signed_in? %>
+          <%= link_to current_user.name, tweets_path, id:"nav_user" %>
+          <%= link_to "logout", destroy_user_session_path, method: :delete, class:"nav_button" %>
+        <% else %>
+          <%= link_to "sign up", new_user_registration_path, class:"nav_button" %>
+          <%= link_to "sign in", new_user_session_path, class:"nav_button" %>
+        <% end %>
+      </div>
+    </div>
     <% if flash[:notice] %>
-      <p class="notice"><%= notice %></p>
+      <div class="flash_notice">
+        <p><%= notice %></p>
+      </div>
     <% end %>
     <% if flash[:alert] %>
-      <p class="alert"><%= alert %></p>
+      <div class="flash_alert">
+        <p><%= alert %></p>
+      </div>
     <% end %>
+    <div class="yield">
+      <%= yield %>
+    </div>
   </body>
 </html>

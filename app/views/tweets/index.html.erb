@@ -1,7 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Tweets</h1>
-
-<%= render "feed" %>
-
-<%= link_to 'New Tweet', new_tweet_path %>
+<div class="container">
+    <div class="column_1-5">
+        <%= render "profile" %>
+    </div>
+    <div class="column_3-5">
+        <%= render "feed" %>
+    </div>
+    <div class="column_1-5">
+        <%= render "interests" %>
+    </div>
+</div>

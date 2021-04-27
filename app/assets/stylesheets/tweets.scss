@@ -1,3 +1,61 @@
 // Place all the styles related to the Tweets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+$primary-color: #E63462;
+$secondary-color: #333745;
+$tertiary-color: #EEF5DB;
+$alert-color: #FE5F55;
+$notice-color: #C7EFCF;
+
+.container {
+    display: flex;
+}
+
+.column_1-5{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    max-width: 18em;
+}
+
+.column_3-5{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+#profile_img {
+    width:100%;
+    border-radius: 50%;
+    margin-bottom:1em;
+}
+
+.tweet {
+    background-color: $tertiary-color;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    .tweet_user {
+        background-color: $primary-color;
+        color:white;
+        padding: 0.3em;
+    }
+    .tweet_body {
+        margin: 0.5em;
+    }
+    .tweet_nav {
+        display: flex;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        .tweet_nav_button {
+            color: $secondary-color;
+            margin-right:1em;
+        }
+    }
+}
+
