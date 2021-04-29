@@ -1,11 +1,16 @@
 <div class="container">
     <div class="column_1-5">
-        <%= render "profile" %>
+        <% if user_signed_in?%>
+            <%= render "profile" %>
+            <%= render "form" %>
+        <%else%>
+            <%= render "trends" %>
+        <%end%>
     </div>
     <div class="column_3-5">
         <%= render "feed" %>
     </div>
     <div class="column_1-5">
-        <%= render "interests" %>
+        <%= render "people" %>
     </div>
 </div>

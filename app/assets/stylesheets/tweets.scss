@@ -2,31 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-$primary-color: #E63462;
-$secondary-color: #333745;
-$tertiary-color: #EEF5DB;
-$alert-color: #FE5F55;
-$notice-color: #C7EFCF;
+
+$primary-color: #467599;
+$secondary-color: #1D3354;
+$tertiary-color: #E9FFF9;
+$alert-color: #D64045;
+$notice-color: #9ED8DB;
+
+
 
 .container {
+    margin-top: 5vh;
     display: flex;
+    max-width: 70em;
+    min-width: 40em;
+    .column_1-5{
+        width: 20%;
+    }
+    .column_3-5{
+        width: 50%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
-
-.column_1-5{
+.small_container {
     display: flex;
     flex-direction: column;
-    width: 20%;
-    max-width: 18em;
+    align-content:  center;
+    margin-top: 5vh;
+    width: 30em;
 }
-
-.column_3-5{
+.actions {
     display: flex;
-    flex-direction: column;
-    width: 60%;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
-
 #profile_img {
     width:100%;
     border-radius: 50%;
@@ -34,19 +45,22 @@ $notice-color: #C7EFCF;
 }
 
 .tweet {
-    background-color: $tertiary-color;
+    background-color: white;
     margin-bottom: 1em;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
     overflow: hidden;
+    box-shadow: 0px 0px 2px $secondary-color;
     .tweet_user {
+        font-weight: 600;
         background-color: $primary-color;
         color:white;
         padding: 0.3em;
     }
     .tweet_body {
         margin: 0.5em;
+        word-wrap:break-word;
     }
     .tweet_nav {
         display: flex;
@@ -59,3 +73,77 @@ $notice-color: #C7EFCF;
     }
 }
 
+.text-input {
+    width: 100%;
+    padding: 0px;
+    resize: none;
+    overflow: auto;
+    border:none;
+    box-shadow: 0px 0px 2px $primary-color;
+    background-color: white;
+    height: 10em;
+}
+input {
+    border:none;
+    font-size: inherit;
+    font-family: inherit;
+    border-radius:5px;
+    cursor:pointer;
+    background-color: $primary-color;
+    color: white;
+}
+
+.people {
+    background-color: white;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px $secondary-color;
+    overflow: hidden;
+    .person {
+        height: 60px;
+        display: flex;
+        overflow: hidden;
+        .person_avatar {
+            float: left;
+        }
+        .person_info {
+            width: 100%;
+            float: right;
+            .person_id {
+                background-color: $primary-color;
+                padding: 2px;
+                padding-top:5px;
+                color:white;
+                .person_name {
+                    font-weight: 600;
+                }
+            }
+            .person_bio {
+                
+                padding: 2px;
+                padding-top:5px;
+            }
+        }
+    }
+}
+
+.trends {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    #trends_title {
+        text-align: center;
+        font-weight: 600;
+        background-color: $primary-color;
+        padding: 2px;
+        padding-top:5px;
+        color:white;
+    }
+    .trend {
+        margin-top: 0.5em;
+        padding-left: 1em;
+    }
+}
